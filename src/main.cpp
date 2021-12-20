@@ -44,8 +44,8 @@ int main(int argc, char **argv) {
 		cout << "\033[6B\033[0m";
 	});
 	signal(SIGINT, [](int) {exit(EXIT_SUCCESS);});
-	
-	auto rd = std::random_device {}; 
+
+	auto rd = std::random_device {};
 	auto rng = std::default_random_engine { rd() };
 
 	int done = 0;
@@ -56,7 +56,7 @@ int main(int argc, char **argv) {
 	int ok = 0;
 
 	hideCursor();
-	cout << "\033[97mDémarrage du test : \033[95m" << params.numbers << "\033[97m éléments, \033[95m" << params.iterations << "\033[97m itérations\033[0m" << endl;
+	cout << "\033[97mStarting the test : \033[95m" << params.numbers << "\033[97m elements, \033[95m" << params.iterations << "\033[97m iterations\033[0m" << endl;
 	while (done < params.iterations) {
 		vector<int> nums(params.numbers);
 		vector<string> args;
